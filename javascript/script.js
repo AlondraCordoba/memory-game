@@ -32,13 +32,8 @@ function cardsMatched(img1, img2) {
         return disabled = false;
     }
     setTimeout(() => {
-        firstCard.classList.add("shake");
-        secondCard.classList.add("shake");
-    }, 400);
-
-    setTimeout(() => {
-        firstCard.classList.remove("shake", "flip");
-        secondCard.classList.remove("shake", "flip");
+        firstCard.classList.remove("flip");
+        secondCard.classList.remove("flip");
         firstCard = secondCard = "";
         disabled = false;
     }, 1200);
