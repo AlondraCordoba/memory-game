@@ -28,12 +28,19 @@ function cardsMatched(img1, img2) {
         }
         firstCard.removeEventListener("click", cardFlipped);
         secondCard.removeEventListener("click", cardFlipped);
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
         firstCard = secondCard = "";
         return disabled = false;
     }
     setTimeout(() => {
-        firstCard.classList.remove("flip");
-        secondCard.classList.remove("flip");
+        firstCard.classList.add("shake");
+        secondCard.classList.add("shake");
+    }, 400);
+
+    setTimeout(() => {
+        firstCard.classList.remove("shake", "flip");
+        secondCard.classList.remove("shake", "flip");
         firstCard = secondCard = "";
         disabled = false;
     }, 1200);
@@ -43,7 +50,7 @@ function cardRandom() {
     matched = 0;
     disabled = false;
     firstCard = secondCard = "";
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 1, 2, 3, 4, 5, 6, 7, 8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32];
     arr.sort(() => Math.random() > 0.5 ? 1 : -1);
     cards.forEach((card, i) => {
         card.classList.remove("flip");
